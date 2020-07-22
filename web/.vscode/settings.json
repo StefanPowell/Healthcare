@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "mysql",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "Google_Cloud",
+            "password": "mari$a1998",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "104.154.57.18",
+            "username": "root"
+        }
+    ]
+}
