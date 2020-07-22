@@ -5,17 +5,32 @@
  */
 package healthi;
 
+import javax.swing.*;  
+import java.awt.*;
+
 /**
  *
- * @author stefan
+ * @author Stefan Powell : powellstefan100@gmail.com
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        display_startscreen();
+    }
+    
+    public static void display_startscreen(){
+      JFrame frame = new JFrame("Doctor Portal");
+      frame.setSize(400, 300);
+      
+      frame.setLayout(null);
+      
+      JButton button = new JButton("Add Doctor");
+      
+      button.setBounds(250,10,140,40);
+      frame.add(button);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setLocationRelativeTo(null);
+      frame.setVisible(true);
     }
     
 }
