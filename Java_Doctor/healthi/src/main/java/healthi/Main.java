@@ -6,7 +6,8 @@
 package healthi;
 
 import javax.swing.*;  
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -18,19 +19,41 @@ public class Main {
         display_startscreen();
     }
     
+    public static void signupscreen(){
+       JFrame frame = new JFrame("Sign Up");
+       frame.setSize(600, 500);
+       frame.setLayout(null);
+       frame.setVisible(true);
+       
+       
+    }
+    
     public static void display_startscreen(){
       JFrame frame = new JFrame("Doctor Portal");
       frame.setSize(400, 300);
       
       frame.setLayout(null);
       
-      JButton button = new JButton("Add Doctor");
+      JButton signupbtn = new JButton("New");
+      JButton loginbtn = new JButton("Login");
       
-      button.setBounds(250,10,140,40);
-      frame.add(button);
+      signupbtn.setBounds(300,10,80,40);
+      loginbtn.setBounds(150,200,100,40);
+      
+      frame.add(signupbtn);
+      frame.add(loginbtn);
+      
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
+      
+      signupbtn.addActionListener(new ActionListener (){
+          @Override
+          public void actionPerformed(ActionEvent e){
+             frame.setVisible(false);
+             signupscreen();
+          }
+      });
     }
     
 }
