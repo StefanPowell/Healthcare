@@ -5,6 +5,7 @@
  */
 package healthi;
 
+import java.awt.FlowLayout;
 import javax.swing.*;  
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,23 +16,36 @@ import java.awt.event.ActionListener;
  */
 public class Main {
 
+    static JTextField firstname, lastname, email;
+            
     public static void main(String[] args) {
         display_startscreen();
     }
     
     public static void signupscreen(){
        JFrame frame = new JFrame("Sign Up");
-       frame.setSize(600, 500);
-       frame.setLayout(null);
+       frame.setSize(600, 400);
+       frame.getContentPane().setLayout(new FlowLayout());
+       
+       JButton donebtn = new JButton("Done");
+       
+       firstname = new JTextField("Firstname", 20);
+       lastname = new JTextField("Lastname");
+       email = new JTextField("Email");
+       
+       donebtn.setBounds(150,200,100,40);
+       
+       frame.getContentPane().add(firstname);
+       frame.add(donebtn);
+       
+       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       frame.setLocationRelativeTo(null);
        frame.setVisible(true);
-       
-       
     }
     
     public static void display_startscreen(){
       JFrame frame = new JFrame("Doctor Portal");
       frame.setSize(400, 300);
-      
       frame.setLayout(null);
       
       JButton signupbtn = new JButton("New");
