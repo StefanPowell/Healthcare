@@ -22,5 +22,7 @@ namespace web
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
     }
 }
