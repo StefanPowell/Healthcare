@@ -16,10 +16,11 @@ import java.sql.*;
  *
  * @author Stefan Powell : powellstefan100@gmail.com
  */
+
 public class Main {
+ 
+    static JTextField firstname, lastname, email, patientsearch;
     
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; 
-    static JTextField firstname, lastname, email;
             
     public static void main(String[] args) {
         String ip = "104.154.57.18";
@@ -44,6 +45,34 @@ public class Main {
             }
     }
     
+    public static void mainscreen(){
+        JFrame frame = new JFrame("Welcome");
+        frame.setSize(1000, 700);
+        frame.getContentPane().setLayout(new FlowLayout());
+        
+        patientsearch = new JTextField(" ", 20);
+        JButton searchbtn = new JButton("Search");
+        JButton newbtn = new JButton("New Patient");
+        JButton startpres = new JButton("Prescribe");
+         
+        frame.getContentPane().add(patientsearch);
+        frame.getContentPane().add(searchbtn);
+        frame.getContentPane().add(newbtn);
+        frame.getContentPane().add(startpres);
+        
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        
+        /*
+        front -search for patient
+        add patient to your list - use patient ID 
+        create prescription - patient needs to already be in system
+        */
+        
+        
+    }
+    
     public static void signupscreen(){
        JFrame frame = new JFrame("Sign Up");
        frame.setSize(600, 400);
@@ -63,6 +92,13 @@ public class Main {
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        frame.setLocationRelativeTo(null);
        frame.setVisible(true);
+       
+       donebtn.addActionListener(new ActionListener (){
+           @Override
+           public void actionPerformed(ActionEvent x){
+               System.out.println(firstname.getText());
+           }
+       });
     }
     
     public static void display_startscreen(){
@@ -88,6 +124,13 @@ public class Main {
           public void actionPerformed(ActionEvent e){
              frame.setVisible(false);
              signupscreen();
+          }
+      });
+      loginbtn.addActionListener(new ActionListener (){
+          @Override
+          public void actionPerformed(ActionEvent e){
+             frame.setVisible(false);
+             mainscreen();
           }
       });
     }
