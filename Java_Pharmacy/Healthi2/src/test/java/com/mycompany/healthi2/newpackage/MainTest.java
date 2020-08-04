@@ -22,7 +22,7 @@ public class MainTest {
      */
     @org.junit.jupiter.api.Test
     public void testAdd() {
-        int z = (3+3);
+        int z = (3+2);
         int expected = 5;
         assertEquals(expected, z);
     }
