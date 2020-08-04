@@ -10,5 +10,5 @@ package com.mycompany.healthi2.newpackage;
  * @author stefan
  */
 public class Main {
-    public int add(){return 5;}
+    public int add(){return 6;}
 }
