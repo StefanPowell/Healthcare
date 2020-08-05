@@ -61,7 +61,7 @@ public class MainTest {
     }
     
     @Test
-    public void testValidate_data2() {
+    public void testValidate_data3() {
         boolean validate_test = Main.validate_data("1assa", "123");
         assertEquals(true, validate_test);
     }
