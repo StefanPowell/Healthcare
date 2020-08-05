@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package healthi;
+package com.mycompany.healthi1.newpackage;
 
 import java.awt.FlowLayout;
 import javax.swing.*;  
@@ -143,8 +143,8 @@ public class Main {
              String user_name_val = login_username.getText();
              String user_pass_val = login_password.getText();
              System.out.println(user_pass_val);
-             boolean validate = validate_data(user_name_val, user_pass_val);
-             System.out.println(validate);
+             //boolean validate = validate_data(user_name_val, user_pass_val);
+             //System.out.println(validate);
              //frame.setVisible(false);
              //mainscreen();
           }
