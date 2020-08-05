@@ -59,6 +59,12 @@ public class MainTest {
         boolean validate_test = Main.validate_data("assa", "123");
         assertEquals(true, validate_test);
     }
+    
+    @Test
+    public void testValidate_data2() {
+        boolean validate_test = Main.validate_data("1assa", "123");
+        assertEquals(true, validate_test);
+    }
 
     /**
      * Test of display_startscreen method, of class Main.
