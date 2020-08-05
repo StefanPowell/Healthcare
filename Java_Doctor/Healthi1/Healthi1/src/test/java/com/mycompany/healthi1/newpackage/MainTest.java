@@ -50,7 +50,7 @@ public class MainTest {
      */
     @Test
     public void testValidate_data() {
-        boolean validate_test = Main.validate_data(" ", " ");
+        boolean validate_test = Main.validate_data("", "");
         assertEquals(false, validate_test);
     }
     
