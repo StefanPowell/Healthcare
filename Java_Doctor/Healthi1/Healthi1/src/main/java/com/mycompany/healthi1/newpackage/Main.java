@@ -103,7 +103,10 @@ public class Main {
     }
     
     public static boolean validate_data(String username, String password){
-        return true;
+        if(username.isEmpty() || password.isEmpty())
+            return false;
+        else
+            return true;
     }
     
     public static void display_startscreen(){
