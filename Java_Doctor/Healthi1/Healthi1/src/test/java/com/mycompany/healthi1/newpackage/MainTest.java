@@ -49,21 +49,33 @@ public class MainTest {
      * Test of validate_data method, of class Main.
      */
     @Test
-    public void testValidate_data() {
+    public void NotEmpty() {
         boolean validate_test = Main.validate_data("", "");
         assertEquals(false, validate_test);
     }
     
     @Test
-    public void testValidate_data2() {
+    public void PasswordGreaterThanEight() {
         boolean validate_test = Main.validate_data("assa", "123");
+        assertEquals(false, validate_test);
+    }
+    
+    @Test
+    public void PasswordGreaterThanEight2() {
+        boolean validate_test = Main.validate_data("1assa", "12A45678");
         assertEquals(true, validate_test);
     }
     
     @Test
-    public void testValidate_data3() {
-        boolean validate_test = Main.validate_data("1assa", "123");
-        assertEquals(true, validate_test);
+    public void PasswordWithoutCaps(){
+        boolean validate_test = Main.validate_data("x", "a2345678");
+        assertEquals(false,validate_test);
+    }
+    
+    @Test
+    public void PasswordwithCaps(){
+        boolean validate_test = Main.validate_data("x", "A2345678");
+        assertEquals(true,validate_test);
     }
 
     /**
