@@ -10,6 +10,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -105,8 +107,30 @@ public class Main {
     public static boolean validate_data(String username, String password){
         boolean valuespopulated = false;
         boolean passwordsize = false;
+        boolean capitalFound = false;
+        boolean letterFound = false;
+        boolean hasSymbol = false;
+        
+        String[] symbols = new String[]{"!","@","#","$","%","^","&","*","?"};
         if(!username.isEmpty() && !password.isEmpty()){valuespopulated=true;}
-        return(valuespopulated && (password.length() >= 8));
+        char[] password_array = password.toCharArray();
+        for(int x = 0; x < password_array.length; x++){
+            //check if not Capitalized
+            if(Character.isUpperCase(password_array[x])){
+               capitalFound = true; 
+            }
+            //check if no letter
+            if(Character.isLetter(password_array[x])){
+               letterFound = true; 
+            }
+            //check if no symbol
+            List<String> listofsymbols = Arrays.asList(symbols);
+            String password_element_check = Character.toString(password_array[x]);
+            if(listofsymbols.contains(password_element_check)){
+                hasSymbol = true;
+            }
+        }
+        return(hasSymbol && letterFound && capitalFound && valuespopulated && (password.length() >= 8));
     }
     
     public static void display_startscreen(){
