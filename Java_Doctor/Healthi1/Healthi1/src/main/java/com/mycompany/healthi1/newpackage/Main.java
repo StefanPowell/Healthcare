@@ -26,27 +26,10 @@ public class Main {
     static JPasswordField login_password;
             
     public static void main(String[] args) {
-        String ip = "104.154.57.18";
-        String username = "spowell375";
-        String password = "mari$a1998";
-        //connect(ip,username, password);
         display_startscreen();
     }
     
-    public static void connect(String ip, String user, String password) {
-            Connection conn1 = null;
-            Connection conn2 = null;
-            Connection conn3 = null;
-            try {
-                String url2 = "jdbc:mysql://104.154.57.18:3306/mysql?user=spowell375&password=mari$a1998";
-                conn2 = DriverManager.getConnection(url2);
-                if (conn2 != null) {
-                    System.out.println("Connected to the database test2");
-                }
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-    }
+    
     
     public static void mainscreen(){
         JFrame frame = new JFrame("Welcome");
@@ -71,6 +54,7 @@ public class Main {
         front -search for patient
         add patient to your list - use patient ID 
         create prescription - patient needs to already be in system
+        
         */
         
         
@@ -111,7 +95,7 @@ public class Main {
         boolean letterFound = false;
         boolean hasSymbol = false;
         
-        String[] symbols = new String[]{"!","@","#","$","%","^","&","*","?"};
+        String[] symbols = new String[]{"~","!","@","#","$","%","^","&","*","?"};
         if(!username.isEmpty() && !password.isEmpty()){valuespopulated=true;}
         char[] password_array = password.toCharArray();
         for(int x = 0; x < password_array.length; x++){
@@ -130,7 +114,7 @@ public class Main {
                 hasSymbol = true;
             }
         }
-        return(hasSymbol && letterFound && capitalFound && valuespopulated && (password.length() >= 8));
+        return(hasSymbol && letterFound && capitalFound && valuespopulated && (password.length() >= 10));
     }
     
     public static void display_startscreen(){
@@ -143,10 +127,10 @@ public class Main {
       login_username = new JTextField("");
       login_password = new JPasswordField("");
       
-      signupbtn.setBounds(300,10,80,40);
-      login_username.setBounds(100,10,100,30);
-      login_password.setBounds(100,80,100,30);
-      loginbtn.setBounds(150,200,100,40);
+      signupbtn.setBounds(300,10,80,30);
+      login_username.setBounds(100,70,200,30);
+      login_password.setBounds(100,110,200,30);
+      loginbtn.setBounds(150,200,100,30);
       
       frame.add(signupbtn);
       frame.add(loginbtn);
@@ -156,6 +140,7 @@ public class Main {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
+      frame.setResizable(false);
       
       signupbtn.addActionListener(new ActionListener (){
           @Override

@@ -49,33 +49,45 @@ public class MainTest {
      * Test of validate_data method, of class Main.
      */
     @Test
-    public void NotEmpty() {
+    public void testValidate_data() {
         boolean validate_test = Main.validate_data("", "");
         assertEquals(false, validate_test);
     }
     
     @Test
-    public void PasswordGreaterThanEight() {
-        boolean validate_test = Main.validate_data("assa", "123");
+    public void testValidate_data2() {
+        boolean validate_test = Main.validate_data("assa", "12345678");
         assertEquals(false, validate_test);
     }
     
-    @Test
-    public void PasswordGreaterThanEight2() {
-        boolean validate_test = Main.validate_data("1assa", "12A45678");
+    public void testValidate_data3(){
+        boolean validate_test = Main.validate_data("assa", "a2345678");
+        assertEquals(false, validate_test);
+    }
+    
+    public void testValidate_data4(){
+        boolean validate_test = Main.validate_data("assa", "A2345678");
+        assertEquals(false, validate_test);
+    }
+    
+    public void testValidate_data5(){
+        boolean validate_test = Main.validate_data("assa", "A2345678$");
+        assertEquals(false, validate_test);
+    }
+    
+    public void testValidate_data6(){
+        boolean validate_test = Main.validate_data("assa", "A2345678$@");
         assertEquals(true, validate_test);
     }
     
-    @Test
-    public void PasswordWithoutCaps(){
-        boolean validate_test = Main.validate_data("x", "a2345678");
-        assertEquals(false,validate_test);
+    public void testValidate_data7(){
+        boolean validate_test = Main.validate_data("assa", "#A2345678$@");
+        assertEquals(true, validate_test);
     }
     
-    @Test
-    public void PasswordwithCaps(){
-        boolean validate_test = Main.validate_data("x", "A2345678");
-        assertEquals(true,validate_test);
+    public void testValidate_data8(){
+        boolean validate_test = Main.validate_data("", "#A2345678$@");
+        assertEquals(false, validate_test);
     }
 
     /**
