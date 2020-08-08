@@ -15,31 +15,17 @@ import java.util.Properties;
  * @author stefan
  */
 
-public class ConnectCloud {
-
-    public static void main(String[] args) {
-        String ip = "104.154.57.18";
-        String username = "spowell375";
-        String password = "mari$a1998";
-        
-            Connection conn = null;
-
-            try {
-                
-                String url = "jdbc:mysql://104.154.57.18:3306/users";
-                Properties info = new Properties();
-                info.put("user", "spowell375");
-                info.put("password", "mari$a1998");
-                
-                 
-                conn = DriverManager.getConnection(url, info);
-                
-                if (conn != null) {
-                    System.out.println("Connected to the database test2");
-                }
-                }catch(SQLException e){
-                    System.out.println(e);
-                }
+public class ConnectCloud {    
+    public static void main(String[] args) { 
+        Connection dbConnection = null;
+        try { String url = "jdbc:mysql://104.154.57.18:3306/mysql"; 
+        Properties info = new Properties(); info.put("user", "spowell375"); 
+        info.put("password", "mari$a1998"); 
+        Class.forName("com.mysql.cj.jdbc.Driver"); 
+        dbConnection = DriverManager.getConnection(url, info); 
+        if (dbConnection != null) { System.out.println("Successfully connected to MySQL database test"); } } 
+        catch (Exception ex) 
+        { System.out.println("An error occurred while connecting MySQL databse"); ex.printStackTrace(); } 
     }
 }
 

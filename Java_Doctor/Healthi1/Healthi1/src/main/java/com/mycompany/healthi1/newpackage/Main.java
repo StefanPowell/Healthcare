@@ -23,7 +23,7 @@ public class Main {
  
     static JTextField firstname, lastname, email, patientsearch;
     static JTextField login_username;
-    static JPasswordField login_password;
+    static JPasswordField login_password, new_password, confirm_password;
             
     public static void main(String[] args) {
         display_startscreen();
@@ -61,24 +61,51 @@ public class Main {
     }
     
     public static void signupscreen(){
-       JFrame frame = new JFrame("Sign Up");
-       frame.setSize(600, 400);
-       frame.getContentPane().setLayout(new FlowLayout());
+       JFrame frame = new JFrame("Registration");
+       frame.setSize(400, 300);
+       frame.setLayout(null);
        
-       JButton donebtn = new JButton("Done");
+       JButton donebtn = new JButton("Register");
+       JButton cancelbtn = new JButton("Cancel");
+       JLabel label1 = new JLabel("Firstname");
+       firstname = new JTextField("");
+       JLabel label2 = new JLabel("Lastname");
+       lastname = new JTextField("");
+       JLabel label3 = new JLabel("Email");
+       email = new JTextField("");
+       JLabel label4 = new JLabel("Password");
+       new_password = new JPasswordField("");
+       JLabel label5 = new JLabel("Confirm Password");
+       confirm_password = new JPasswordField("");
        
-       firstname = new JTextField("Firstname", 20);
-       lastname = new JTextField("Lastname");
-       email = new JTextField("Email");
+       // - left - top - width - height
+       donebtn.setBounds(25,220,150,30);
+       cancelbtn.setBounds(225,220,150,30);
+       label1.setBounds(10,10,130,30);
+       firstname.setBounds(150,10,200,30);
+       label2.setBounds(10,50,130,30);
+       lastname.setBounds(150,50,200,30);
+       label3.setBounds(10,90,130,30);
+       email.setBounds(150,90,200,30);
+       label4.setBounds(10,130,130,30);
+       new_password.setBounds(150,130,200,30);
+       label5.setBounds(10,170,130,30);
+       confirm_password.setBounds(150,170,200,30);
        
-       donebtn.setBounds(150,200,100,40);
        
-       frame.getContentPane().add(firstname);
+       frame.add(label1);frame.add(label2);frame.add(label3);frame.add(label4);frame.add(label5);
+       frame.add(firstname);
+       frame.add(lastname);
+       frame.add(email);
+       frame.add(new_password);
+       frame.add(confirm_password);
        frame.add(donebtn);
+       frame.add(cancelbtn);
        
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        frame.setLocationRelativeTo(null);
        frame.setVisible(true);
+       frame.setResizable(false);
        
        donebtn.addActionListener(new ActionListener (){
            @Override
