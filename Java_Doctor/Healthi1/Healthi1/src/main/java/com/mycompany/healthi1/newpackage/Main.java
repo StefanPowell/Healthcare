@@ -180,12 +180,9 @@ public class Main {
           @Override
           public void actionPerformed(ActionEvent e){
              String user_name_val = login_username.getText();
-             String user_pass_val = login_password.getText();
-             System.out.println(user_pass_val);
-             //boolean validate = validate_data(user_name_val, user_pass_val);
-             //System.out.println(validate);
-             //frame.setVisible(false);
-             //mainscreen();
+             char[] user_pass_val = login_password.getPassword();
+             frame.setVisible(false);
+             Startup.main();
           }
       });
     }   
