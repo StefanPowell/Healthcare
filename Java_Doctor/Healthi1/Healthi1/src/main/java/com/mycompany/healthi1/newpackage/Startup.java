@@ -5,7 +5,7 @@
  */
 package com.mycompany.healthi1.newpackage;
 
-import static com.mycompany.healthi1.newpackage.Main.firstname;
+
 import javax.swing.JButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JFrame;
@@ -23,6 +23,16 @@ public class Startup {
     
     static JTextField prescription_name, dosage, patient_id, refill;
     static JTextArea instructions;
+    static JTextField p3_firstname, p3_lastname;
+    
+    public static boolean patient_id_size(String pid){
+        if(pid.length() == 8){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     public static void main(){
         JFrame frame = new JFrame("Healthi");
@@ -32,12 +42,13 @@ public class Startup {
         JTabbedPane tp= new JTabbedPane();    
         JPanel p1=new JPanel(); 
         JPanel p2=new JPanel();  
-        JPanel p3=new JPanel();   
+        JPanel p3=new JPanel(); 
+        JPanel p4=new JPanel(); 
         tp.setBounds(0, 0, 1000, 700);
         tp.add("Prescribe Medication",p1);  
         tp.add("Patients",p2);  
         tp.add("Settings",p3);  
-        
+        tp.add("Logout",p4); 
         
         frame.add(tp);    
         
@@ -79,6 +90,19 @@ public class Startup {
         p2.add(searchbtn);
         
         //p3 elements
+        p3.setSize(1000, 700);
+        p3.setLayout(null);
+        JLabel p3label = new JLabel("Firstname");
+        p3label.setBounds(10,10,100,20);
+        p3_firstname = new JTextField("Stefan");
+        p3_firstname .setBounds(120,10,250,20);
+        JLabel p3label1 = new JLabel("Lastname");
+        p3label1.setBounds(10,40,100,20);
+        p3_lastname = new JTextField("Powell");
+        p3_lastname .setBounds(120,40,250,20);
+        
+        p3.add(p3label);p3.add(p3_firstname);
+        p3.add(p3label1);p3.add(p3_lastname);
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
