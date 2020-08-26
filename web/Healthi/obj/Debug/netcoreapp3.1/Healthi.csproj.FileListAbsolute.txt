@@ -35,4 +35,6 @@ C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcor
 C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Healthi.genruntimeconfig.cache
 C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Healthi.csproj.CopyComplete
 C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Healthi.csprojAssemblyReference.cache
-C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Razor\Views\Home\MyView.cshtml.g.cs
+C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Razor\Views\Home\Main.cshtml.g.cs
+C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Razor\Views\Home\RsvpForm.cshtml.g.cs
+C:\Users\powel\source\repos\StefanPowell\Healthcare\web\Healthi\obj\Debug\netcoreapp3.1\Razor\Views\Shared\MyView.cshtml.g.cs

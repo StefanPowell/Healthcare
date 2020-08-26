@@ -18,9 +18,17 @@ namespace Healthi.Controllers
             return View("MyView");
         }
 
-        public ViewResult Home_Webpage()
+        [HttpGet]
+        public ViewResult RsvpForm()
         {
-            return View("Main");
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult RsvpForm(GuestResponse guestResponse)
+        {
+            Repository.AddResponse(guestResponse);
+            return View();
         }
     }
 }
